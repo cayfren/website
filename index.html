@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cayfren Business Solutions — Strategic Finance & AI Automation for UAE Businesses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0a0e13;
+      --card: #131920;
+      --card-hover: #1a2129;
+      --text: #e8edf4;
+      --muted: #9daec3;
+      --accent: #5ee3ff;
+      --accent-hover: #4dd4ee;
+      --border: #1e2a38;
+      --gradient-1: #194b5b;
+      --gradient-2: #102b47;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    
+    /* Header Section */
+    header {
+      padding: 80px 24px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #0d1219 0%, var(--bg) 100%);
+    }
+    
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      margin-bottom: 24px;
+    }
+    
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    
+    .btn {
+      padding: 14px 28px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    
+    .btn:hover {
+      background: var(--card-hover);
+      border-color: #2a3a50;
+      transform: translateY(-1px);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+      border-color: #1e3a56;
+      color: var(--text);
+    }
+    
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+    
+    .pill-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    /* Main Content */
+    main {
+      padding: 64px 0;
+    }
+    
+    section {
+      margin-bottom: 80px;
+    }
+    
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    
+    .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    
+    /* Service Grid */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    @media (min-width: 768px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      background: var(--card-hover);
+      border-color: #2a3a50;
+      transform: translateY(-2px);
+    }
+    
+    .card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .card li {
+      padding-left: 24px;
+      margin-bottom: 12px;
+      position: relative;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    
+    .card li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    
+    .card li:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Why Choose Section */
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .feature-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .feature-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    
+    .feature-item strong {
+      color: var(--accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    
+    .feature-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    /* Target Clients Section */
+    .client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .client-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .client-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+    }
+    
+    .client-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    
+    .client-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* AI Agent Highlight */
+    .highlight-box {
+      background: linear-gradient(135deg, #0f1f2e 0%, #0d1820 100%);
+      border: 1px solid #1e3a56;
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .highlight-box h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+    
+    .highlight-box p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    
+    .highlight-box .btn {
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+    
+    /* Contact Section */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .contact-box p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+    }
+    
+    .contact-item a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-item a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      
+      h2 {
+        font-size: 26px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+      }
+      
+      header {
+        padding: 60px 20px 48px;
+      }
+      
+      .highlight-box {
+        padding: 32px 24px;
+      }
+      
+      .highlight-box h3 {
+        font-size: 24px;
+      }
+      
+      .contact-box {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="badge">Cayfren Business Solutions LLC</div>
+      <h1>Transform Your Finance & Accounting with AI-Powered Automation</h1>
+      <p class="subtitle">We help UAE businesses streamline financial operations, reduce manual workload by up to 70%, and unlock actionable insights through intelligent automation and strategic consulting.</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="https://accounts-ai.com" target="_blank">Try Our AI Agent</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+      <div class="pill-group">
+        <span class="pill">Management Consultancy License</span>
+        <span class="pill">AI & Automation Solutions</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <div class="container">
+        <h2>Our Service Offerings</h2>
+        <p class="section-intro">Comprehensive solutions designed to modernize your finance function and drive measurable efficiency gains.</p>
+        
+        <div class="service-grid">
+          <div class="card">
+            <h3>Strategic Finance Consulting</h3>
+            <ul>
+              <li>Design and implement robust accounting processes with built-in controls</li>
+              <li>Streamline month-end closing cycles from weeks to days</li>
+              <li>Develop custom KPI frameworks and real-time dashboards</li>
+              <li>Scale your finance operations as your business grows</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>AI-Powered Accounting Automation</h3>
+            <ul>
+              <li>Deploy intelligent agents for AP/AR processing, invoice handling, and bank reconciliations</li>
+              <li>Seamless integration with Xero, Zoho Books, QuickBooks, and custom ERPs</li>
+              <li>Real-time alerts for anomalies, missing approvals, and unusual transactions</li>
+              <li>Full training and handover to keep your team in control</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Team Training & Enablement</h3>
+            <ul>
+              <li>Hands-on workshops to embed finance best practices across your organization</li>
+              <li>Create documented SOPs, user guides, and governance frameworks</li>
+              <li>Ongoing support to ensure sustainable process improvements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-agent">
+      <div class="container">
+        <div class="highlight-box">
+          <h3>Meet Our AI Accounting Agent</h3>
+          <p>Experience the future of accounting automation. Our intelligent agent handles repetitive tasks like data entry, invoice processing, reconciliations, and expense categorization—freeing your team to focus on strategic work.</p>
+          <a class="btn btn-primary" href="https://accounts-ai.com" target="_blank">Explore accounts-ai.com →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container">
+        <h2>Who We Serve</h2>
+        <p class="section-intro">We work with growing businesses across the UAE who need more from their finance function.</p>
+        
+        <div class="client-grid">
+          <div class="client-card">
+            <h4>SMEs & Scale-ups</h4>
+            <p>Companies outgrowing spreadsheets and manual processes who need structured finance operations.</p>
+          </div>
+          
+          <div class="client-card">
+            <h4>Trading & Distribution</h4>
+            <p>Businesses managing high transaction volumes who want faster closing cycles and better inventory visibility.</p>
+          </div>
+          
+          <div class="client-card">
+            <h4>Professional Services</h4>
+            <p>Firms seeking accurate project costing, better cash flow management, and client profitability insights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <h2>Why Choose Cayfren?</h2>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>Deep UAE Market Knowledge</strong>
+            <p>We understand local business dynamics, regulatory requirements, and the accounting software ecosystem used across the Emirates.</p>
+          </div>
+          
+          <div class="feature-item">
+            <strong>End-to-End Implementation</strong>
+            <p>From strategy design through technology deployment to team adoption—we stay with you throughout the journey.</p>
+          </div>
+          
+          <div class="feature-item">
+            <strong>Rapid Value Delivery</strong>
+            <p>See measurable improvements in efficiency and accuracy within 4-6 weeks, not months of lengthy implementations.</p>
+          </div>
+          
+          <div class="feature-item">
+            <strong>Cost-Effective Innovation</strong>
+            <p>Leverage enterprise-grade AI and automation without the overhead of building internal IT infrastructure or hiring specialists.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <div class="contact-box">
+          <p>Let's discuss how we can transform your finance operations into a strategic growth driver.</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span>📧</span>
+              <a href="mailto:info@cayfren.com">info@cayfren.com</a>
+            </div>
+            <div class="contact-item">
+              <span>📱</span>
+              <a href="https://wa.me/971522912563">+971 52 291 2563</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Cayfren Business Solutions LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
